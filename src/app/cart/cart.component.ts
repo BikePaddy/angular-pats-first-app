@@ -24,4 +24,11 @@ export class CartComponent implements OnInit {
       address: ""
     });
   }
+
+  onSubmit(customerData){
+    // Process checkout Data here
+     console.warn('Your order has been submitted', customerData);
+    this.items = this.cartService.clearCart();
+    this.checkoutForm.reset;
+  }
 }
