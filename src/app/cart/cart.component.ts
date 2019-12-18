@@ -11,6 +11,7 @@ import { FormBuilder } from '@angular/forms';
 export class CartComponent implements OnInit  {
   
   items;
+  checkoutForm;
 
 
   constructor(
@@ -20,6 +21,12 @@ export class CartComponent implements OnInit  {
 
   ngOnInit() {
     this.items = this.cartService.getItems();
+
+   this.checkoutForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
+
   }
 
 }
